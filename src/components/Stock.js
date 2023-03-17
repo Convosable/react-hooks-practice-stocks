@@ -1,12 +1,15 @@
 import React from "react";
 
-function Stock() {
+function Stock({stock, handleStockChange}) {
+
+  const {ticker, name, type, price} = stock
+  
   return (
     <div>
-      <div className="card">
+      <div onClick = {() => handleStockChange(stock)} className="card">
         <div className="card-body">
-          <h5 className="card-title">{"Compant Name"}</h5>
-          <p className="card-text">{"Stock Price"}</p>
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">{ticker}: {price}</p>
         </div>
       </div>
     </div>
